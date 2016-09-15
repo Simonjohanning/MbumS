@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Motivation}{2}{0}{1}
+\beamer@sectionintoc {2}{Mathematische Modellierung}{10}{0}{2}
+\beamer@sectionintoc {3}{Modellierung paper}{21}{0}{3}
+\beamer@sectionintoc {4}{Ergebnis}{29}{0}{4}
+\beamer@sectionintoc {5}{Kritik}{33}{0}{5}
+\beamer@sectionintoc {6}{Praktikumsarbeit}{34}{0}{6}

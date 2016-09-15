@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{Wittmann}
+D.M.~Wittmann et. al.
+\newblock Transforming boolean models to continuous models: methodology and
+  application to t-cell receptor signaling.
+\newblock {\em BMC Systems Biology}, 3(98), 2009.
+
+\bibitem{Kirkham}
+G.R.~Kirkham et. al.
+\newblock Early gene regulation of osteogenesis in embronic stem cells.
+\newblock {\em Integrative biology}, 4(12):1470--7, 2012.
+
+\bibitem{Krumsiek}
+J.~Krumsiek et. al.
+\newblock From discrete to continuous gene regulation models - a tutorial using
+  the odefy toolbox.
+\newblock {\em Applications of MATLAB in Science and Engineering}, 2011.
+
+\end{thebibliography}

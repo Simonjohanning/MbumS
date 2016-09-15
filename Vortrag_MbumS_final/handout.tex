@@ -1,0 +1,139 @@
+\documentclass[a4paper,oneside,DIV8,10pt]{scrartcl}
+  
+\usepackage{amsfonts} 
+%used for amsfonts
+\usepackage{amsmath}
+%for measuredangle
+\usepackage{amssymb}
+%used for mathscr
+\usepackage{mathrsfs}
+%used for indicator function (mathbbm)
+\usepackage{dsfont}
+%for page margins
+\usepackage{geometry}
+%for linespacing
+\usepackage{setspace}
+ 
+  % Titel des Handouts
+  %   #1 Name des Vortragenden
+  %   #2 email-Adresse 
+  %   #3 Datum des Vortrags
+  %   #4 Titel des Vortrags
+  \newcommand{\handouttitle}[2]
+   {\begin{center}
+      \Large #2
+    \end{center}
+
+    \bigskip
+
+    \noindent
+    #1 (\textsf{#2})
+    \hfill
+
+    \blfootnote{Seminar \glqq Diskrete Geometrie und Kombinatorik\grqq, 
+      WS~2008/2009, {\smaller WWU}~M\"unster}
+  
+    \noindent
+    \rule{\linewidth}{.5pt}
+
+    \bigskip
+
+    \@afterindentfalse\@afterheading
+   }
+  \makeatother
+  \renewcommand{\sectfont}{\normalfont}       % aendert den Font fuer Ueberschriften
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Konsistenz des k-NN Klassifikators\vspace{-2ex}}
+\date{}
+
+% Anfang des eigentlichen Dokuments
+\begin{document}
+
+\maketitle
+
+\section{Zentrale Objekte / Definitionen}
+
+$\mu$: W.Mass auf X, $\mu(A) = \mathbb{P}(X \in A)$, im bin\"aren Fall $er^{0-1}_{D}[h] = \mathbb{P}_{(x,y) \sim D} (h(x) \neq y)$
+\\
+\onehalfspacing \textbf{Gemeinsame Wahrscheinlichkeitsverteilung}: $D: \mathfrak{X} x \mathfrak{Y}$ 
+\\ \textbf{Bedingte Wahrscheinlichkeit}: $\eta (x) := \mu(Y=1 | X=x)$, Regression von $Y$ auf $X$
+\\
+\onehalfspacing \textbf{Kostenfunktion}: $\ell:\mathfrak{Y} x \mathfrak{Y} \to [0, \infty)$, im bin\"aren: $\ell=\ell_{0-1} = \mathds{1}_{\{\hat{y} \neq y\}}$
+\\
+\onehalfspacing \textbf{Generalisierungsfehler}: $er^{\ell}_{D}[h] = \mathbb{E}_{(x,y) \sim D}[\ell(y, h(x))]$ f\"ur Kostenfkt. $\ell$ und Verteilung $D$
+\\
+\onehalfspacing \textbf{Bayes´scher Fehler}: $er^{\ell,*}_D = \inf_{h: \mathfrak{X} \to \mathfrak{Y}} er^{\ell}_D[h]$
+\\
+\onehalfspacing \textbf{Algorithmus} $\mathscr{A}: \cup_{m=1}^{\infty} (\mathfrak{X} x \mathfrak{Y})^{m} \to \mathcal{H}$ liefert $h_{S} = \mathscr{A}(S) \in \mathcal{H}$ f\"ur Trainingsdaten $S \in \cup_{m=1}^{\infty} (\mathfrak{X} x \mathfrak{Y})^{m}$
+\\
+\onehalfspacing $\mathscr{A}$ heisst \textbf{Bayes-konsistent in $\mathcal{H}$} im Bezug auf $D$ und $l$ falls f\"ur alle $\epsilon > 0$ gilt:
+	$P_{S \sim D^{m}}(er^{l}_{D}[h_{S}] - er^{l,*}_D \geq \epsilon) \stackrel{m \to \infty}{\longrightarrow} 0$
+\\
+\onehalfspacing $\mathscr{A}$ heisst \textbf{universell Bayes-konsistent in $\mathcal{H}$} wenn $\mathscr{A}$ Bayes-konsistent bez\"uglich aller Verteilungen $D$ ist
+\\
+\onehalfspacing
+\textbf{k-NN Klassifikator}:
+Klassifikationregel $h_{s}: \mathfrak{X} \to \{+1,-1\}, S =(x_{i}, y_{i})^{n} \in (\mathfrak{X} \text{ x }\{+1, -1\})^{m}$ mit
+	\\ $h_{s}(x) =
+		 \begin{cases} 1 & \sum_{i=1}^{n} y_{i} \omega_{i} \geq 0  \\
+			-1 & \sum_{i=1}^{n} y_{i} \omega{i} < 0  \end{cases}$
+		und 
+	\\ $w_{i}(x) =
+		 \begin{cases} ^1/_k & i \enskip \text{ist einer von k-n\"achsten Nachbarn} \\
+			0 & sonst \end{cases} $
+\\
+\onehalfspacing \textbf{support}: $\text{support}(\mu) = \bigcup_{\mathfrak{X} \ni x} \{ \forall \epsilon > 0: \mu(S_{x, \epsilon}) > 0\}$
+
+\section{Hilfss\"atze}
+\subsection{Satz 1}
+$h^{*}$ ist optimaler Klassifikator, also $\forall h: \mathfrak{X} \to \mathfrak{Y}$ gilt:
+	\\ $\mathbb{P}(h^{*}(X) \neq Y) \leq \mathbb{P}(h(X) \neq Y)$
+
+\subsection{Satz 2}
+$er^{\ell}_{D} - er^{\ell,*}_{D} \leq 2 \int_{\mathbb{R}^{d}} |\eta(x) - \eta_{S}(x)| \mu(dx) = 2 \mathbb{E}(|\eta(x) - \eta_{S}(x)|)$
+
+\subsection{Korollar}
+$\mathbb{P}(h_{S,n}(x) \neq y|D_{n}) - er^{\ell,*}_{D} \leq 2 \sqrt{\int_{\mathbb{R}^{d}} |\eta(x) - \eta_{S,n}(x)|^{2} \mu(dx)}$
+\\
+\medskip Existiert $\eta_{S,n}(x)$ mit $\int_{\mathbb{R}^{d}} |\eta(x) - \eta_{S,n}(x)|^{2} \mu(dx) \to 0$ (in $\mathbb{P}$ bzw. mit W. 1), so ist $h_{S}$ Bayes-konsistent.
+
+\subsection{Lemma 1}
+$\mathfrak{X} \ni x \in \text{support}(\mu), \lim_{n \to \infty} \frac{k}{n} = 0$
+\\ $\Rightarrow \|X_{k} (x) - x \| \to 0$ mit Wahrscheinlichkeit 1
+\medskip
+\\
+$x$ unabh\"angig von Daten und W.-Mass $\mu$
+\\ $\Rightarrow \|X_{k}(x) - x\| \stackrel{\frac{k}{n} \to 0}{\longrightarrow} 0$ mit Wahrscheinlichkeit 1
+
+\subsection{Lemma 2}
+Sei $\theta \in (0, \frac{\pi}{2}), C(x, \theta)$ der Kegel in $\mathbb{R}^{d}$ mit Kegelspitze $0$, 
+\\ der die Punkte $y \in \mathbb{R}^{d} \text{ mit } \measuredangle (x,y) \leq \theta$ enth\"alt.
+\\ Dann $\exists \{x_{1},...,x_{\gamma_{d}}\} \subset \mathbb{R}^{d}$, sodass
+ $ \mathbb{R}^{d} = \bigcup^{\gamma_{d}}_{i=1} C(x_{i}, \theta)$ gilt.
+ \\
+\medskip Es weiterhin m\"oglich $\gamma_{d}$ so zu w\"ahlen, dass $\gamma_{d} \leq (1 + \frac{1}{sin(\frac{\theta}{2})})^{d} - 1$, 
+\\ also f\"ur $\theta = \frac{\pi}{6}$: $\gamma_{d} \leq (1 + \frac{2}{\sqrt{2 - \sqrt{3}}})^{d} - 1$
+
+\subsection{Lemma von Stone}
+$\forall f \in L^{1} \forall n \forall k \leq n$ gilt $\sum^{k}_{i=1} \mathbb{E} (|f(x_{i} (x))|) \leq k \gamma_{d} \mathbb{E} (|f(x)|)$,
+\\ wobei $\gamma_d \leq (1 + \frac{2}{\sqrt{2 - \sqrt{3}}})^{d}$ ausschliesslich von der Dimension abh\"angt.
+
+\section{Zentrale Aussagen}
+
+\subsection{Stone´s Satz \"uber schwacher Konvergenz}
+$h_{S}: \mathfrak{X} \to \{+1,-1\}, S =(x_{i}, y_{i})^{m} \in (\mathfrak{X} \text{ x }\{+1, -1\})^{m}$
+
+\emph{i)} $\exists c > 0$, sodass $\forall$ nicht-neg. messbare $f: \mathfrak{X} \to \mathbb{R} \text{ mit } \mathbb{E}_x |f(x)| < \infty$ gilt:
+	\\ $\mathbb{E}_{x_{1},...,x_{m},x} (\sum^{m}_{i=1} \omega_{i}(x)f(x_{i})) \leq c \mathbb{E}_{x}(|f(x)|)$
+
+\emph{ii)} $ \forall a > 0: \mathbb{E}_{x_{1},...,x_{m},x} (\sum^{m}_{i=1} \omega_{i}(x) \mathds{1}_{\{\|x_{i} - x\| \geq a\}}) \stackrel{m \to \infty}{\longrightarrow} 0 $
+
+\emph{iii)} $\mathbb{E}_{x_{1},...,x_{m},x} (\max_{1 \leq i \leq m} \omega_{i}(x)) \stackrel{m \to \infty}{\longrightarrow} 0$
+\\ $\Rightarrow h_{S}$ ist universell Bayes-konsistent
+
+\subsection{Satz von Stone}
+F\"ur $k \rightarrow \infty, \frac{k}{n} \rightarrow 0$ gilt f\"ur alle Verteilungen $D: er^{\ell}_{D}[h_{S \sim D^{n}}] \rightarrow er^{\ell,*}_{D}$, 
+\\ also ist der k-NN Klassifikator f\"ur $k \rightarrow \infty, \frac{k}{n} \rightarrow 0$ Bayes-konsistent
+
+\end{document}

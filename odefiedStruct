@@ -1,0 +1,19 @@
+# Ordered parameter list:
+# a_tau
+# a_n_a
+# a_k_a
+# a_n_b
+# a_k_b
+# b_tau
+# b_n_b
+# b_k_b
+# b_n_a
+# b_k_a
+
+# ODE function def
+odetest <- function (t,cvals,params) {
+res=array(0,dim=2)
+res[1]=((1-cvals[1]^params[2]/(cvals[1]^params[2]+params[3]^params[2]))*(1-cvals[2]^params[4]/(cvals[2]^params[4]+params[5]^params[4]))+cvals[1]^params[2]/(cvals[1]^params[2]+params[3]^params[2])*(1-cvals[2]^params[4]/(cvals[2]^params[4]+params[5]^params[4]))+cvals[1]^params[2]/(cvals[1]^params[2]+params[3]^params[2])*cvals[2]^params[4]/(cvals[2]^params[4]+params[5]^params[4])-cvals[1]) / params[1]
+res[2]=((1-cvals[2]^params[7]/(cvals[2]^params[7]+params[8]^params[7]))*(1-cvals[1]^params[9]/(cvals[1]^params[9]+params[10]^params[9]))+cvals[2]^params[7]/(cvals[2]^params[7]+params[8]^params[7])*(1-cvals[1]^params[9]/(cvals[1]^params[9]+params[10]^params[9]))+cvals[2]^params[7]/(cvals[2]^params[7]+params[8]^params[7])*cvals[1]^params[9]/(cvals[1]^params[9]+params[10]^params[9])-cvals[2]) / params[6]
+list(res)
+}

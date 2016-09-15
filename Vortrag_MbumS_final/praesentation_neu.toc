@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Hintergrund}{1}{0}{1}
+\beamer@sectionintoc {2}{Forschungsansatz}{31}{0}{2}
+\beamer@sectionintoc {3}{Kritik}{67}{0}{3}
+\beamer@sectionintoc {4}{Praktikumsarbeit}{89}{0}{4}
+\beamer@sectionintoc {5}{Appendix}{101}{0}{5}

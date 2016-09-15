@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Background}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Kirkham paper}{2}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Motivation}{2}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Structure}{3}{subsubsection.1.2.2}
+\contentsline {section}{\numberline {2}Theory}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}General approach to make discrete models continuous}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}HillCube}{4}{subsubsection.2.1.1}
+\contentsline {section}{\numberline {3}Practical implementation}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Investigation of the GRN as boolean network}{6}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Identification of stable BMs}{6}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Fixed point analysis of reported networks}{8}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Odefying Kirkham}{10}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Odefy}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Practical approach to Odefy}{10}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Case study: negative regulation of Runx2 on Dlx5}{11}{subsubsection.3.2.3}
+\contentsline {paragraph}{BMP2 only with conjunction}{13}{section*.2}
+\contentsline {paragraph}{TGFb1 only with conjunction}{13}{section*.3}
+\contentsline {paragraph}{TGFb1 and BMP2 with conjunction}{13}{section*.4}
+\contentsline {paragraph}{BMP2 with disjunction}{14}{section*.5}
+\contentsline {paragraph}{TGFb1 with disjunction}{15}{section*.6}
+\contentsline {paragraph}{Both media with disjunction}{16}{section*.7}
+\contentsline {subsubsection}{\numberline {3.2.4}Discussion of case study}{18}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Practical aspects Odefy}{20}{subsubsection.3.2.5}
+\contentsline {section}{\numberline {4}Discussion}{20}{section.4}
+\contentsline {section}{Appendices}{22}{section*.8}

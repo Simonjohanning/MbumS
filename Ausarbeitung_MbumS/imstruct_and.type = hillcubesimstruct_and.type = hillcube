@@ -1,0 +1,45 @@
+simstruct_and =
+
+  scalar structure containing the fields:
+
+    model =
+
+      scalar structure containing the fields:
+
+        species = 
+        {
+          [1,1] = BMP2
+          [1,2] = TGFb1
+          [1,3] = Dlx5
+          [1,4] = Msx2
+          [1,5] = Runx2
+        }
+        tables =
+
+          1x5 struct array containing the fields:
+
+            truth
+            inspecies
+
+        name = odefymodel
+
+    timeto =  10
+    params =
+
+       1.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+       1.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+       1.00000   3.00000   0.50000   3.00000   0.50000   3.00000   0.50000
+       1.00000   3.00000   0.50000   3.00000   0.50000   3.00000   0.50000
+       1.00000   3.00000   0.50000   3.00000   0.50000   3.00000   0.50000
+
+    initial =
+
+       0
+       0
+       0
+       0
+       0
+
+    modelname = odefymodel
+    type = hillcube
+

@@ -1,0 +1,56 @@
+# Created by Octave 4.0.0, Tue Jul 19 19:36:23 2016 CEST <sim@Sims-Desktop>
+# name: ans
+# type: scalar
+0
+
+
+# name: codepath
+# type: sq_string
+# elements: 1
+# length: 33
+/home/sim/Desktop/Odefy-1.19/code
+
+
+# name: expr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+a = a || ~b
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+b = b || ~a
+
+
+
+
+
+# name: helpfile
+# type: sq_string
+# elements: 1
+# length: 43
+/home/sim/Desktop/Odefy-1.19/doc/index.html
+
+
+# name: odefypath
+# type: sq_string
+# elements: 1
+# length: 28
+/home/sim/Desktop/Odefy-1.19
+
+
+# name: scriptpath
+# type: sq_string
+# elements: 1
+# length: 28
+/home/sim/Desktop/Odefy-1.19
+
+
